@@ -10,19 +10,17 @@ const data = Array.from(new Array(3)).map((_val, i) => ({
   url: `/Name${i}`
 }));
 
-const handleClick = (el,index) => {
-  console.log(el,index);
+const handleClick = (el, index) => {
+  console.log(el, index);
   router.push(el.url);
 }
 
 
- function Page() {
-  function to(){
-    router.push('/cp');
-  }
+function Page() {
+
   return (
     <div className={styles.normal}>
-      <Grid data={data} activeStyle={false} onClick={handleClick}/>
+      <Grid data={data} activeStyle={false} onClick={handleClick} />
     </div>
   );
 }
