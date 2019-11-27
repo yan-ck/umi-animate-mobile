@@ -2,15 +2,17 @@ import styles from './index.css';
 import withRouter from 'umi/withRouter';
 
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { connect } from 'dva';
 
-const Layout = ({ location, children ,uam}) => (
+const Layout = ({ location, children }) => (
   <TransitionGroup>
-    <CSSTransition key={location.pathname} classNames={uam.animate} timeout={300}>
+    <CSSTransition 
+    key={location.pathname} 
+    classNames='animate' 
+    timeout={15000}>
       {children}
     </CSSTransition>
   </TransitionGroup>
 )
 
 
-export default withRouter(connect(({ uam }) => ({ uam }))(Layout));
+export default withRouter(Layout);

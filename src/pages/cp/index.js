@@ -1,17 +1,9 @@
-import { connect } from 'dva';
 import { NavBar, Icon } from 'antd-mobile';
 import router from 'umi/router';
 
 import styles from './index.less';
-function App({ cp, dispatch }) {
-  const { text, list } = cp;
+function CP() {
   function to() {
-    dispatch({
-      type:'uam/save',
-      payload:{
-        animate:'right'
-      }
-    })
     router.go(-1);
   }
   return (
@@ -44,4 +36,4 @@ function App({ cp, dispatch }) {
     </div>
   );
 }
-export default connect(({ cp }) => ({ cp }))(App);
+export default CP;

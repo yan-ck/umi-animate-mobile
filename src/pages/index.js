@@ -1,57 +1,30 @@
 import styles from './index.css';
-import { Button ,WhiteSpace} from 'antd-mobile';
+// import { Button ,WhiteSpace} from 'antd-mobile';
+import { Grid } from 'antd-mobile';
+
 import router from 'umi/router';
-import { connect } from 'dva';
 
-import Link from 'umi/link';
+const data = Array.from(new Array(3)).map((_val, i) => ({
+  icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
+  text: `name${i}`,
+  url: `/Name${i}`
+}));
+
+const handleClick = (el,index) => {
+  console.log(el,index);
+  router.push(el.url);
+}
 
 
-
- function Page({dispatch}) {
+ function Page() {
   function to(){
-    dispatch({
-      type:'uam/save',
-      payload:{
-        animate:'left'
-      }
-    })
     router.push('/cp');
   }
   return (
     <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to umi!</h1>
-      <Button onClick={to}>Linkdefault</Button>
-      <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-        <p>text' is assigned a value but never used text' is assigned a value but never used </p>
-      <WhiteSpace />
+      <Grid data={data} activeStyle={false} onClick={handleClick}/>
     </div>
   );
 }
 
-export default connect(({ page }) => ({ page }))(Page);
+export default Page;
