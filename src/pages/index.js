@@ -4,7 +4,7 @@ import { Grid } from 'antd-mobile';
 
 import router from 'umi/router';
 
-const data = Array.from(new Array(3)).map((_val, i) => ({
+const data = Array.from(new Array(4)).map((_val, i) => ({
   icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
   text: `name${i}`,
   url: `/Name${i}`
