@@ -2,6 +2,7 @@
 .normal {
   font-family: Georgia, sans-serif;
   text-align: center;
+  position: relative;
 }
 
 .title {
@@ -14,17 +15,3 @@
   margin: 0;
 }
 
-/* .animate-enter {
-  opacity: 0;
-}
-.animate-enter-active {
-  opacity: 1;
-  transition: opacity 20000ms ease-in;
-}
-.animate-exit {
-  opacity: 1;
-}
-.animate-exit-active {
-  opacity: 0;
-  transition: opacity 20000ms ease-in;
-} */
