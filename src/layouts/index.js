@@ -28,7 +28,6 @@ const Layout = ({ location, children }) => {
         </CSSTransition>
       </TransitionGroup>
     </div>
-
   )
 }
 
