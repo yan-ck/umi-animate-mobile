@@ -23,7 +23,7 @@ const Layout = ({ location, children }) => {
         <CSSTransition
           key={location.pathname}
           classNames='page'
-          timeout={20000}>
+          timeout={300}>
             {children}
         </CSSTransition>
       </TransitionGroup>
